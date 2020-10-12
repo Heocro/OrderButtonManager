@@ -6,9 +6,9 @@ import ch.nolix.system.nodeDatabaseAdapter.NodeDatabaseAdapterCreator;
 
 /**
  * @author Silvan Wyss
- * @date 2020-10-03
+ * @date 2020-10-12
  */
-public final class Launcher {
+public final class DemoLauncher {
 	
 	private static final String DATBASE_FILE_PATH = "OrderButtonManagerDatabase.spec";
 	
@@ -21,5 +21,5 @@ public final class Launcher {
 		ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 	}
 	
-	private Launcher() {}
+	private DemoLauncher() {}
 }

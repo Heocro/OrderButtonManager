@@ -15,7 +15,8 @@ public final class DemoLauncher {
 	public static void main(String[] args) {
 		
 		//Creates a NetServer with a OrderButtonManager as default Application.
-		new NetServer(new OrderButtonManager(new NodeDatabaseAdapterCreator(DATBASE_FILE_PATH)));
+		new NetServer()
+		.addDefaultApplication(new OrderButtonManager(new NodeDatabaseAdapterCreator(DATBASE_FILE_PATH)));
 		
 		//Starts a web browser that will connect to the default Application of the NetServer.
 		ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();

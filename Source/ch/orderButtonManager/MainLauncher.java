@@ -17,8 +17,14 @@ public final class MainLauncher {
 	}
 	
 	private static void run() {	
+		
 		final var databaseFilePath = "OrderButtonManagerDatabase" + counter + ".spec";
-		final var netServer = new NetServer(new OrderButtonManager(new NodeDatabaseAdapterCreator(databaseFilePath)));
+		final var netServer = new NetServer();
+		
+		netServer.addDefaultApplication(
+			new OrderButtonManager(new NodeDatabaseAdapterCreator(databaseFilePath))
+		);
+		
 		Sequencer.waitAsLongAs(netServer::isOpen);
 		Sequencer.waitForSeconds(5);
 		counter++;
